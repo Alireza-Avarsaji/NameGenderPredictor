@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>My Name Predictor</title>
+</head>
+<body class="base-container">
+    <main class="base-container">
+        <form class="base-container">
+            <h1>Mr. or Ms. ?</h1>
+            <div class="input-con base-container">
+                <label for="name">name: </label>
+                <input type="text" id="name" maxlength="255">
+            </div>
+            <div class="radio-con">
+                <div style="margin-bottom: 10px;">
+                    <input type="radio" name="gender-type" value="male" id="male" style="cursor: pointer;">
+                <label for="male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" name="gender-type" value="female" id="female" style="cursor: pointer;">
+                <label for="female">Female</label>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button type="button" class="submit">SUBMIT</button>
+                </div>
+                <br>
+                <div>
+                    <button type="button" class="save">SAVE</button>
+                </div>
+            </div>
+        </form>
+        <div class="prediction-container">
+            <h1>Prediction</h1>
+            <h3 id="answer">___</h3>
+            <h3 id="possibility">___</h3>
+
+            <h1 style="margin-top: 30px;">Saved Answer</h1>
+            <h3 id="saved-ans">___</h3>
+
+            <button class="clear" style="margin-top: 30px;">CLEAR</button>
+
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
