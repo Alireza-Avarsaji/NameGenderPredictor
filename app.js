@@ -11,20 +11,34 @@ const answer = document.getElementById('answer');
 const possibility = document.getElementById('possibility');
 const savedAnswer = document.getElementById('saved-ans');
 
+// ? fetched response from api converted to js object
 let response = {};
 
-
+// ? submit button onclick
 submit.addEventListener('click', () => {
     fetch(`${url}${document.getElementById('name').value}`).then(res => {
         res.json().then(info => {
             response = info;
-            answer.innerHTML = response.gender;
-            possibility.innerHTML = response.probability;
+            // ! handle null result
+            if(!response.gender || response.probability == 0){
+                console.log('hi');
+                answer.innerText = 'Unknown';
+                possibility.innerHTML = 0;
+            }
+            else{
+                answer.innerHTML = response.gender;
+                possibility.innerHTML = response.probability;
+            }
         });
+    }) //! catch network error
+    .catch(err => {
+        let error = document.getElementById("error");
+        error.innerHTML = 'network error!'
     });
     savedAnswer.innerHTML = localStorage.getItem(document.getElementById('name').value);
 });
 
+// ? save button onclick
 save.addEventListener('click', () => {
     const radioGroup = document.querySelectorAll('input[name="gender-type"]');
             let selectedValue;
@@ -42,6 +56,7 @@ save.addEventListener('click', () => {
         }
 });
 
+// ? clear button onclick
 clear.addEventListener('click', () => {
     localStorage.removeItem(document.getElementById('name').value);
     savedAnswer.innerHTML = '___';

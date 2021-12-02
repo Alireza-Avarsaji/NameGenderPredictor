@@ -1,18 +1,27 @@
+/* ? font and box sizing */
 *{
     font-family: 'Josefin Sans', sans-serif;
     box-sizing: border-box;
 }
 
+/* ? html */
 html{
     width: 100%;
     height: 100vh;
 }
 
+/* ? headings styles */
 h1{
     margin: 0px 0px 25px 0px;
     color: #404040;
 }
 
+h3{
+    margin-bottom: 10px;
+    color: #b7410e;
+}
+
+/* ?body styles and layout by flexbox */
 body{
     height: 100vh;
     margin: 0px !important;
@@ -21,6 +30,7 @@ body{
     background-repeat: no-repeat;
 }
 
+/* ? main card of the page with flex display */
 main{
     margin: auto;
     grid-area: main;
@@ -35,17 +45,19 @@ main{
     align-content: flex-start;
 }
 
+/* ? common class for flex containers */
 .base-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-
+/* ? left form width */
 form{
     flex-basis: 50%;
 }
 
+/* ? right box */
 .prediction-container{
     flex-basis: 50%;
     padding-left: 10px;
@@ -75,7 +87,7 @@ form{
     border-radius: 2px;
     padding: 10px;
 }
-
+/* ? focus input */
 .input-con > input:focus{
     border: 1px solid #404040;
     transition: all 0.3s;
@@ -163,14 +175,14 @@ button {
     color: #fff;
   }
 
-  .clear:hover,
+.clear:hover,
 .clear:focus {
   box-shadow: 
     inset -4em 0 0 0 #DC143C,
     inset 4em 0 0 0 #DC143C;  
 }
 
-h3{
-    margin-bottom: 10px;
-    color: #b7410e;
+#error{
+  color: rgb(194, 41, 41);
 }
+
